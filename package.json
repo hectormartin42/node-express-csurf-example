@@ -1,0 +1,21 @@
+{
+  "name": "node-express-csrf-example",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "csurf": "^1.9.0",
+    "debug": "~2.2.0",
+    "express": "~4.13.4",
+    "express-nunjucks": "^2.0.1",
+    "express-session": "^1.14.2",
+    "jade": "~1.11.0",
+    "morgan": "~1.7.0",
+    "nunjucks": "^2.5.1",
+    "serve-favicon": "~2.3.0"
+  }
+}
