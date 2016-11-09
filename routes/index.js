@@ -3,7 +3,7 @@ var router = express.Router()
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Valid page', csrfToken: req.csrfToken() })
+  res.render('index', { title: 'Valid page' })
 })
 
 /* GET malicious page. */

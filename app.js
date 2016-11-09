@@ -36,6 +36,12 @@ app.use(session({
 
 app.use(csrf())
 
+// Generate token for all get requests
+app.get('/', function (req, res, next) {
+  res.locals.csrfToken = req.csrfToken()
+  next()
+})
+
 app.use('/', routes)
 app.use('/users', users)
 
