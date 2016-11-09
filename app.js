@@ -27,7 +27,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
-
 // Use the session middleware
 app.use(session({
   secret: 'test',
