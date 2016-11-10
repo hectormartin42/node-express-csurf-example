@@ -33,7 +33,7 @@ app.use(cookieParser({
 app.use(csurf({ cookie: true }))
 
 // Generate token for all get requests
-app.get('/', function (req, res, next) {
+app.get('*', function (req, res, next) {
   res.locals.csrfToken = req.csrfToken()
   next()
 })
