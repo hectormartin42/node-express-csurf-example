@@ -4,8 +4,7 @@ var nunjucks = require('express-nunjucks')
 var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
-var session = require('express-session')
-var csrf = require('csurf')
+var csurf = require('csurf')
 
 var routes = require('./routes/index')
 var users = require('./routes/users')
@@ -24,17 +23,13 @@ nunjucks(app)
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
-// Use the session middleware
-app.use(session({
-  secret: 'test',
-  resave: false,
-  saveUninitialized: true
+// Use cookie parser middleware (required for csurf)
+app.use(cookieParser({
+  secret: 'test'
 }))
-
-app.use(csrf())
+app.use(csurf({ cookie: true }))
 
 // Generate token for all get requests
 app.get('/', function (req, res, next) {
