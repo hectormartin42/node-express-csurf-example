@@ -29,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(cookieParser({
   secret: 'test'
 }))
+
 app.use(csurf({ cookie: true }))
 
 // Generate token for all get requests
